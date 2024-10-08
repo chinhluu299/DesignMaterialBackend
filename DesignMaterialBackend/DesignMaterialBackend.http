@@ -1,0 +1,6 @@
+@DesignMaterialBackend_HostAddress = http://localhost:5034
+
+GET {{DesignMaterialBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
