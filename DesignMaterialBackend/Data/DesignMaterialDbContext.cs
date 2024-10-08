@@ -25,11 +25,12 @@ namespace DesignMaterialBackend.Data
         {
             base.OnConfiguring(optionsBuilder);
             
-
+            
             
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            
             builder.Seed();
      
         }

@@ -1,4 +1,6 @@
-﻿namespace DesignMaterialBackend.Data
+﻿
+
+namespace DesignMaterialBackend.Data
 {
     public class ExchangeRate
     {
@@ -7,6 +9,7 @@
         public DateTime CreateAt { get; set; } = DateTime.Now;
         public DateTime UpdateAt { get; set; }
         public bool Active { get; set; } = false;
+      
         public CurrencyUnit CurrencyUnit { get; set; }
 
     }
