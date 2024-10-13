@@ -8,5 +8,8 @@
         public bool IsOnline { get; set; } = true;
         public DateTime CreateAt { get; set; } = DateTime.Now;
         public DateTime UpdateAt { get; set; }
+
+        public ICollection<PaymentAccount> PaymentAccounts { get; set; }
+
     }
 }
