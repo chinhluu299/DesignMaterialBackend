@@ -10,6 +10,7 @@ namespace DesignMaterialBackend.Data
         public DateTime UpdateAt { get; set; }
         public bool Active { get; set; } = false;
       
+        public Guid CurrencyUnitId { get; set; } 
         public CurrencyUnit CurrencyUnit { get; set; }
 
     }

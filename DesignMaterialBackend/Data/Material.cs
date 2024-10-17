@@ -11,7 +11,10 @@
         public int CountDownloaded { get; set; }
         public DateTime CreateAt { get; set; } = DateTime.Now;
         public DateTime UpdateAt { get; set; }
-        public List<MaterialType> MaterialTypes { get; set; }
+
+        public Guid MaterialTypeId { get; set; }
+
+        public MaterialType MaterialTypes { get; set; }
         
     }
 }

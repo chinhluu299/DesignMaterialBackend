@@ -14,6 +14,8 @@
         public DateTime UpdateAt { get; set; }
         public bool PaymentStatus { get; set; }
 
+        public Guid PaymentAccountId { get; set; }
+        public Guid UserId { get; set; }
         public PaymentAccount PaymentAccount { get; set; }
         public User User { get; set; }
 

@@ -7,6 +7,8 @@ namespace DesignMaterialBackend.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<ExchangeRate> builder)
         {
+            builder.HasKey(x => x.Id);
+
             builder.Property(e => e.Rate)
                .IsRequired() 
                .HasColumnType("float");
@@ -18,14 +20,14 @@ namespace DesignMaterialBackend.Data.Configurations
 
             builder.Property(e => e.UpdateAt)
                 .HasColumnType("datetime")
-                .IsRequired(false); 
+                .HasDefaultValueSql("GETDATE()");
 
             builder.Property(e => e.Active)
                 .HasDefaultValue(false); 
 
             builder.HasOne(e => e.CurrencyUnit)
                 .WithMany(c => c.ExchangeRates) 
-                .HasForeignKey("CurrenyUnit");
+                .HasForeignKey(e => e.CurrencyUnitId);
         }
     }
 }

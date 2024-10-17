@@ -7,9 +7,37 @@ namespace DesignMaterialBackend.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<MaterialType> builder)
         {
-            builder.HasKey(x => x.Id);
+            // Table name
+            builder.ToTable("MaterialTypes");
 
-            builder.Property(x => x.Name).HasMaxLength(256).IsRequired();
+            // Primary key
+            builder.HasKey(mt => mt.Id);
+
+            // Properties
+            builder.Property(mt => mt.Id)
+                .IsRequired()
+                .ValueGeneratedOnAdd(); // Auto-generate Guid
+
+            builder.Property(mt => mt.Name)
+                .IsRequired()
+                .HasMaxLength(100); // Set max length for Name
+
+            builder.Property(mt => mt.Other)
+                .HasMaxLength(255); // Optional Other field with max length
+
+            builder.Property(mt => mt.CreateAt)
+                .IsRequired()
+                .HasDefaultValueSql("GETDATE()"); // Default to current date for CreateAt
+
+            builder.Property(mt => mt.UpdateAt)
+                .IsRequired()
+                .HasDefaultValueSql("GETDATE()"); // Default to current date for UpdateAt
+
+            // Relationships
+            builder.HasMany(mt => mt.Materials)
+                .WithOne(m => m.MaterialTypes)
+                .HasForeignKey(m => m.MaterialTypeId)
+                .OnDelete(DeleteBehavior.Restrict); // Define delete behavior
         }
     }
 }

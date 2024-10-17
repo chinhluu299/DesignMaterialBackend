@@ -7,11 +7,41 @@ namespace DesignMaterialBackend.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<PaymentType> builder)
         {
-            builder.HasKey(x => x.Id);
+            // Table name
+            builder.ToTable("PaymentTypes");
 
-            builder.Property(x => x.Name).IsRequired();
+            // Primary key
+            builder.HasKey(pt => pt.Id);
 
-            builder.Property(x => x.IsOnline).HasDefaultValue(true).IsRequired();
+            // Properties
+            builder.Property(pt => pt.Id)
+                .IsRequired()
+                .ValueGeneratedOnAdd(); // Auto-generate Guid
+
+            builder.Property(pt => pt.Name)
+                .IsRequired()
+                .HasMaxLength(100); // Set max length for Name
+
+            builder.Property(pt => pt.Description)
+                .HasMaxLength(255); // Optional Description field with max length
+
+            builder.Property(pt => pt.IsOnline)
+                .IsRequired()
+                .HasDefaultValue(true); // Set default value to true
+
+            builder.Property(pt => pt.CreateAt)
+                .IsRequired()
+                .HasDefaultValueSql("GETDATE()"); // Default to current date for CreateAt
+
+            builder.Property(pt => pt.UpdateAt)
+                .IsRequired()
+                .HasDefaultValueSql("GETDATE()"); // Default to current date for UpdateAt
+
+            // Relationships
+            builder.HasMany(pt => pt.PaymentAccounts)
+                .WithOne(pa => pa.PaymentType)
+                .HasForeignKey(pa => pa.PaymentTypeId)
+                .OnDelete(DeleteBehavior.Restrict); // Define delete behavior
         }
     }
 }
