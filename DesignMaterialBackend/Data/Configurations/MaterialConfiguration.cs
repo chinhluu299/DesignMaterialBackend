@@ -50,7 +50,7 @@ namespace DesignMaterialBackend.Data.Configurations
                 .HasDefaultValueSql("GETDATE()"); // Default to current date for UpdateAt
 
             // Relationships
-            builder.HasOne(m => m.MaterialTypes)
+            builder.HasOne(m => m.MaterialType)
                 .WithMany(mt => mt.Materials)
                 .HasForeignKey(m => m.MaterialTypeId)
                 .OnDelete(DeleteBehavior.Restrict); // Define delete behavior

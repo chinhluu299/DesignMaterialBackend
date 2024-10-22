@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DesignMaterialBackend.Data.MaterialType>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card my-4">
+                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                    <div class="bg-gradient-danger shadow-primary border-radius-lg pt-4 pb-3 d-flex flex-row justify-content-between">
+                        <h6 class="text-white text-capitalize ps-3">Categories table</h6>
+                        <a class="d-flex flex-row align-items-center" asp-action="Create">
+                            <i class="material-icons align-self-center me-1 fw-bold text-white">add</i>
+                            <div class="align-self-center me-4 fw-bold text-white">Create New</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body px-0 pb-2">
+                    <div class="table-responsive p-0">
+                        <table class="table align-items-center mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@Html.DisplayNameFor(model => model.Name)</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@Html.DisplayNameFor(model => model.UpdateAt)</th>
+                                    <th class="text-secondary opacity-7"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <p class="text-sm font-weight-bold mb-0 px-2"> @Html.DisplayFor(modelItem => item.Name)</p>
+                                        </td>
+                                       
+                                        <td class="align-middle text-center">
+                                            <span class="text-secondary text-xs font-weight-bold px-2">@Html.DisplayFor(modelItem => item.UpdateAt)</span>
+                                        </td>
+                                        <td class="align-middle px-3 text-end">
+                                            <a asp-action="Edit" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" asp-route-id="@item.Id">Edit</a> |
+                                            <a asp-action="Details" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" asp-route-id="@item.Id">Details</a> |
+                                            <a asp-action="Delete" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" asp-route-id="@item.Id">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

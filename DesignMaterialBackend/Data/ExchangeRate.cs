@@ -11,7 +11,7 @@ namespace DesignMaterialBackend.Data
         public bool Active { get; set; } = false;
       
         public Guid CurrencyUnitId { get; set; } 
-        public CurrencyUnit CurrencyUnit { get; set; }
+        public CurrencyUnit? CurrencyUnit { get; set; }
 
     }
 }

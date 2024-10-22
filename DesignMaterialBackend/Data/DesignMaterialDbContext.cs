@@ -22,6 +22,9 @@ namespace DesignMaterialBackend.Data
         public DbSet<PaymentType> PaymentTypes { get; set; }
         public DbSet<CurrencyUnit> CurrencyUnits { get; set; }
         public DbSet<ExchangeRate> ExchangeRates { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<BlogCategory> BlogCategories { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

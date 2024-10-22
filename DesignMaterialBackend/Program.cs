@@ -19,7 +19,8 @@ namespace DesignMaterialBackend
 
             builder.Services.AddDbContext<DesignMaterialDbContext>(options => options.UseSqlServer(connectionString));
 
-            builder.Services.AddControllers();
+            //builder.Services.AddControllers();
+            builder.Services.AddControllersWithViews();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -49,14 +50,27 @@ namespace DesignMaterialBackend
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseHsts();
             }
 
             app.Map("/", async context => await context.Response.WriteAsync("Server OK!"));
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+            });
             app.UseAuthorization();
-
 
             app.MapControllers();
 

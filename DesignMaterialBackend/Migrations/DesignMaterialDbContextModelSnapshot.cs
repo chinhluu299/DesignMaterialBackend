@@ -45,12 +45,12 @@ namespace DesignMaterialBackend.Migrations
                     b.Property<DateTime>("LastUpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 10, 15, 23, 23, 58, 294, DateTimeKind.Local).AddTicks(6681));
+                        .HasDefaultValue(new DateTime(2024, 10, 23, 0, 22, 12, 585, DateTimeKind.Local).AddTicks(6102));
 
                     b.Property<DateTime>("PublishedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 10, 15, 23, 23, 58, 294, DateTimeKind.Local).AddTicks(6236));
+                        .HasDefaultValue(new DateTime(2024, 10, 23, 0, 22, 12, 585, DateTimeKind.Local).AddTicks(5659));
 
                     b.Property<string>("Slug")
                         .IsRequired()
@@ -141,7 +141,7 @@ namespace DesignMaterialBackend.Migrations
                         new
                         {
                             Id = new Guid("4b3d1bda-7a32-406a-868f-2c07f27607b4"),
-                            CreateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1489),
+                            CreateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1245),
                             Description = "Vietnamese Dong",
                             Unit = "VND"
                         });
@@ -185,10 +185,10 @@ namespace DesignMaterialBackend.Migrations
                         {
                             Id = new Guid("fd5ed73b-81a3-4a2b-ba9f-73a2a491b1d6"),
                             Active = true,
-                            CreateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1655),
+                            CreateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1394),
                             CurrencyUnitId = new Guid("4b3d1bda-7a32-406a-868f-2c07f27607b4"),
                             Rate = 1000.0,
-                            UpdateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1655)
+                            UpdateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1394)
                         });
                 });
 
@@ -278,37 +278,37 @@ namespace DesignMaterialBackend.Migrations
                         new
                         {
                             Id = new Guid("1297b179-a53b-4744-b972-2d89052a8579"),
-                            CreateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1712),
+                            CreateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1441),
                             Name = "Software",
-                            UpdateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1713)
+                            UpdateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1442)
                         },
                         new
                         {
                             Id = new Guid("5b541003-b171-4c4b-b2a7-bc91b71fd81f"),
-                            CreateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1713),
+                            CreateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1442),
                             Name = "Plugin",
-                            UpdateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1714)
+                            UpdateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1443)
                         },
                         new
                         {
                             Id = new Guid("19713c48-f765-4767-a740-97016453f68b"),
-                            CreateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1714),
+                            CreateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1444),
                             Name = "Font",
-                            UpdateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1715)
+                            UpdateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1444)
                         },
                         new
                         {
                             Id = new Guid("7669e3da-034c-496f-bfb6-bd4f4d18146e"),
-                            CreateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1716),
+                            CreateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1445),
                             Name = "Element",
-                            UpdateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1716)
+                            UpdateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1446)
                         },
                         new
                         {
                             Id = new Guid("3d08304c-8fea-4889-9112-12e432aecf8d"),
-                            CreateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1717),
+                            CreateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1446),
                             Name = "Sound",
-                            UpdateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1718)
+                            UpdateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1447)
                         });
                 });
 
@@ -392,7 +392,7 @@ namespace DesignMaterialBackend.Migrations
                         new
                         {
                             Id = new Guid("d7296a15-fa42-4f7b-b70f-066fae86a83b"),
-                            CreateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1681),
+                            CreateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1415),
                             Description = "",
                             IsOnline = true,
                             Name = "Banking",
@@ -401,7 +401,7 @@ namespace DesignMaterialBackend.Migrations
                         new
                         {
                             Id = new Guid("b457ef8e-3371-4b59-8f46-a1ddfe18b10f"),
-                            CreateAt = new DateTime(2024, 10, 15, 23, 23, 58, 295, DateTimeKind.Local).AddTicks(1680),
+                            CreateAt = new DateTime(2024, 10, 23, 0, 22, 12, 586, DateTimeKind.Local).AddTicks(1414),
                             Description = "",
                             IsOnline = true,
                             Name = "Momo",
@@ -698,13 +698,13 @@ namespace DesignMaterialBackend.Migrations
 
             modelBuilder.Entity("DesignMaterialBackend.Data.Material", b =>
                 {
-                    b.HasOne("DesignMaterialBackend.Data.MaterialType", "MaterialTypes")
+                    b.HasOne("DesignMaterialBackend.Data.MaterialType", "MaterialType")
                         .WithMany("Materials")
                         .HasForeignKey("MaterialTypeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("MaterialTypes");
+                    b.Navigation("MaterialType");
                 });
 
             modelBuilder.Entity("DesignMaterialBackend.Data.PaymentAccount", b =>

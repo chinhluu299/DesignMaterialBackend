@@ -11,7 +11,7 @@
         public DateTime UpdatedAt { get; set; }
 
         public Guid PaymentTypeId { get; set; }
-        public PaymentType PaymentType { get; set; }
+        public PaymentType? PaymentType { get; set; }
 
         public List<Receipt>  ReceiptList { get; set; }
 

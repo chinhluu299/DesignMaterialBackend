@@ -35,7 +35,7 @@ namespace DesignMaterialBackend.Data.Configurations
 
             // Relationships
             builder.HasMany(mt => mt.Materials)
-                .WithOne(m => m.MaterialTypes)
+                .WithOne(m => m.MaterialType)
                 .HasForeignKey(m => m.MaterialTypeId)
                 .OnDelete(DeleteBehavior.Restrict); // Define delete behavior
         }

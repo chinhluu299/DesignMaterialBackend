@@ -14,7 +14,7 @@
 
         public Guid MaterialTypeId { get; set; }
 
-        public MaterialType MaterialTypes { get; set; }
+        public MaterialType? MaterialType { get; set; }
         
     }
 }

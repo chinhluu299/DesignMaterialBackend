@@ -14,7 +14,7 @@
         public int ViewCount { get; set; }
         public string ThumbnailUrl { get; set; }
         public int CategoryID { get; set; }
-        public BlogCategory BlogCategory { get; set; }
+        public BlogCategory? BlogCategory { get; set; }
 
     }
 }
