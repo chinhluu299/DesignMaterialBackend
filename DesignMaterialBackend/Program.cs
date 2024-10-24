@@ -41,6 +41,7 @@ namespace DesignMaterialBackend
                     ValidAudience = configuration.GetSection("Tokens:Audience").Value,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetSection("Tokens:Key").Value))
                 };
+                ops.RequireHttpsMetadata = true;
             });
           
             var app = builder.Build();
@@ -60,7 +61,7 @@ namespace DesignMaterialBackend
             app.Map("/", async context => await context.Response.WriteAsync("Server OK!"));
 
             app.UseHttpsRedirection();
-
+            
             app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
